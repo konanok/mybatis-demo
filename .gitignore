@@ -1,0 +1,6 @@
+# idea相关
+.idea
+*.iml
+
+# 测试数据
+data
