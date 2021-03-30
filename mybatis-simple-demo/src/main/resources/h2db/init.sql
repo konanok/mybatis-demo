@@ -1,0 +1,8 @@
+CREATE TABLE post(
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT COMMENT '自增主键',
+    `title` VARCHAR(64) NOT NULL COMMENT '文章标题',
+    `tags` VARCHAR(256) NOT NULL DEFAULT '' COMMENT '文章标签，多个标签用英文逗号分割',
+    `status` SMALLINT NOT NULL DEFAULT 0 COMMENT '文章状态，0-草稿状态，1-已提交，2-已发布',
+    `create_date_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `update_date_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间'
+);
