@@ -4,3 +4,6 @@
 
 # 测试数据
 data
+
+# mvn构建数据
+target
