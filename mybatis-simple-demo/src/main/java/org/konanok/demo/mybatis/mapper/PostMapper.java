@@ -1,5 +1,6 @@
 package org.konanok.demo.mybatis.mapper;
 
+import org.apache.ibatis.annotations.*;
 import org.konanok.demo.mybatis.entity.Post;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public interface PostMapper {
      *
      * @param post
      */
+    @Insert("INSERT INTO post (title, tags, status) VALUES (#{title}, #{tags}, #{status})")
     void add(Post post);
 
     /**
@@ -21,5 +23,10 @@ public interface PostMapper {
      *
      * @return
      */
+    @Select("SELECT * FROM post")
+    @Results(value = {
+            @Result(column = "create_date_time", property = "createDateTime"),
+            @Result(column = "update_date_time", property = "updateDateTime")
+    })
     List<Post> list();
 }
